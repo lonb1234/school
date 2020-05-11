@@ -1,0 +1,84 @@
+
+.header{
+ height:90%;
+ width:100%;
+}
+
+.school{
+  height:40%;
+  width:100%;
+}
+.header{
+  height:50%;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.intro{
+  text-align: center;
+  font-size: 25px;
+}
+
+
+.navbar3{
+position: sticky;
+top:0;
+}
+
+
+.content{
+  margin: 7% 24% 4% 18%;
+  background-color:white;
+
+}
+.content2{
+  font-family:"roboto";
+  font-size:20px;
+}
+
+.title{
+  font-family:"motserrat";
+  font-size:35px;
+  font-weight:bolder;
+}
+
+.navbar-brand{
+  font-family:"Montserrat";
+  font-weight:  bolder;
+letter-spacing:1px;
+  color:#f0f5f9;
+  font-size:27px
+}
+.bg-light{
+  background-color:#c9d6df;
+}
+.nav-item{
+  font-family:"Montserrat";
+  color:#f0f5f9;
+  font-size:20px;
+}
+
+.navbar-custom{
+  background-color:#52616b;
+      opacity:0.98;
+  color:#f0f5f9;
+}
+
+
+.foot{
+
+  padding: 1.2% 0 1.2% 0;
+  text-align: center;
+  background-color:#c9d6df;
+  color:white;
+}
+
+
+.delete{
+font-size:90px;
+  color:red;
+  font-weight: bolder;
+}

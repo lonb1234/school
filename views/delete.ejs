@@ -1,0 +1,25 @@
+
+<%- include("partials/header"); -%>
+
+
+
+<h1 class="delete">Blog(s) Verwijderen.</h1>
+<form class="verwijder" action="/delete" method="post">
+
+
+<%  posts.forEach(function(post){ %>
+
+<h1><%=post.title%></h1>
+<p>
+  <%=post.content.substring(0, 100) + " ..."%>
+  <a href="/posts/<%=post._id%>">Verder lezen</a>
+  <input type="checkbox" name="checkbox" value="<%=post._id%>">
+</p>
+
+
+<% }) %>
+
+
+<button type="submit" class="btn btn-danger">Verwijderen</button>
+</form>
+<%- include("partials/footer"); -%>
