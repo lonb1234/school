@@ -15,7 +15,8 @@ mongoose.connect("mongodb://localhost:27018/blogDB", {useNewUrlParser: true, use
 
 const postSchema = {
   title: String,
-  content: String
+  content: String,
+  type: String
 };
 
 const Post = mongoose.model("Post", postSchema);
@@ -31,16 +32,30 @@ app.get("/", function(req, res){
   });
 });
 app.get("/kind", function(req, res){
-  res.render("kind")
-})
+  Post.find({type:"Kind"}, function(err, posts){
+    res.render("kind", {
+
+      posts: posts
+      });
+  });
+});
+
 
 app.get("/kort", function(req, res){
-  res.render("kort")
-})
+  Post.find({type:"Kort"}, function(err, posts){
+    res.render("kort", {
+
+      posts: posts
+      });
+})})
 
 app.get("/dynamisch", function(req, res){
-  res.render("dynamisch")
-})
+  Post.find({type:"Dynamisch"}, function(err, posts){
+    res.render("dynamisch", {
+
+      posts: posts
+      });
+})})
 
 app.get("/login", function(req, res){
   res.render("login")
@@ -53,7 +68,8 @@ app.get("/compose", function(req,res){
 app.post("/compose", function(req, res){
   const post = new Post({
     title: req.body.postTitle,
-    content: req.body.postBody
+    content: req.body.postBody,
+    type: req.body.type
   });
 
 
@@ -79,7 +95,6 @@ app.post("/delete", function (req,res){
   const checkedBox=req.body.checkbox
   var i;
 for (i = 0; i < checkedBox.length; i++) {
-  // checkedBox.forEach(function(){
   Post.findByIdAndRemove(checkedBox, function(err){
     if (!err){
       console.log("deleted")

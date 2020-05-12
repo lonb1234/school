@@ -82,3 +82,10 @@ font-size:90px;
   color:red;
   font-weight: bolder;
 }
+
+
+.posttype{
+  font-weight: lighter;
+  color:gray;
+  font-size: 22px;
+}
